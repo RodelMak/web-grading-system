@@ -4,28 +4,10 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'teacher') {
     header("Location: login.php");
     exit();
 }
+include 'layout/header.php';
+include 'layout/navbar.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Teacher Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <div class="bg-primary text-white p-4" style="width: 250px; min-height: 100vh;">
-            <h4 class="mb-4">Teacher Panel</h4>
-            <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link text-white">Dashboard</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link text-white">Manage Grades</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link text-white">Subjects</a></li>
-                <li class="nav-item"><a href="logout.php" class="nav-link text-danger">Logout</a></li>
-            </ul>
-        </div>
 
         <!-- Content -->
         <div class="p-5 flex-grow-1">
@@ -86,5 +68,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'teacher') {
         }
     });
     </script>
-</body>
-</html>
+
+<?php 
+include 'layout/footer.php';
+?>
